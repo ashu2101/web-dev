@@ -35,12 +35,12 @@ systemctl enable php-fpm httpd
 
 ## Step 2: To try if apache and php are configred try below command
 
-- To obtain information about your PHP settings, create the index.php file with the following content in the /var/www/html/ directory:
+- To obtain information about your PHP settings, create the ```temp.php``` file with the following content in the ```/var/www/html/``` directory:
 ```sh
 echo '<?php phpinfo(); ?>' > /var/www/html/temp.php
 ```
 
-- To run the temp.php file, point the browser to:
+- To run the ```temp.php``` file, point the browser to:
 ```html
 http://<hostname>/temp.php
 ```
