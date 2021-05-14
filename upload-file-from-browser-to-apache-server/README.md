@@ -45,7 +45,7 @@ echo '<?php phpinfo(); ?>' > /var/www/html/temp.php
 http://<hostname>/temp.php
 ```
 
-## Step 3: Disable PrivateTmp configurations in  ```/usr/lib/systemd/system/httpd.service``` 
+## Step 3: Disable PrivateTmp configurations in  /usr/lib/systemd/system/httpd.service
 ```sh
 vim /usr/lib/systemd/system/httpd.service
 ```
@@ -55,7 +55,7 @@ systemctl restart httpd
 ```
 
 
-## Step 4:  Create simlink for extensions folder and scripts folder in ```/opt/polarion/polarion/extensions``` and ```/opt/polarion/scripts```
+## Step 4:  Create simlink for extensions folder and scripts folder in /opt/polarion/polarion/extensions and /opt/polarion/scripts
 ```sh
 cd /opt/polarion/polarion/extensions
 ln -s /tmp/extensions new_extensions
@@ -63,7 +63,7 @@ cd /opt/polarion/scripts
 ln -s /opt/polarion/scripts/ new_scripts
 ```
 
-## Step 5: Create a ```upload.php``` file and copy the php code present in repo.
+## Step 5: Create a upload.php file and copy the php code present in repo.
 ```sh
 cd /var/www/html
 touch upload.php
@@ -76,7 +76,7 @@ cd /opt/polarion/polarion/extensions/
 ln -s 
 ```
 
-## Step 7: Access the http://<hostname>/upload.php
+## Step 7: Access the http://hostname/upload.php
 
 
 #### Note:
@@ -92,7 +92,7 @@ ln -s /opt/kits kits
 <option value="opt">OPT</option>
 <option value="kits">Kits</option>
 ```
-
+3. You need to replace hostname with your actual hostname in  http://hostname/upload.php
 
 
 #### Ref Links: 
