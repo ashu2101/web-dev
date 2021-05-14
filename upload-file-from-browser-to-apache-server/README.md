@@ -51,10 +51,10 @@ touch upload.php
 ## Step 5: Access the http://<hostname>/upload.php and try uploading files to server.
 
 
-# Note:
-1. Not able to upload file to server: Check the apache logs in /var/log/html/error_log for error messages. You need to changes folder permissions to accomplish this.
+#### Note:
+1- Not able to upload file to server: Check the apache logs in /var/log/html/error_log for error messages. You need to changes folder permissions to accomplish this.
 
-2. If want to change the destincation folder location, change the the name of simlinks created in step 3 with your directory location. Change options value in the update.php
+2- If want to change the destincation folder location, change the the name of simlinks created in step 3 with your directory location. Change options value in the update.php
 ex: 
 ```sh
 ln -s /opt opt
@@ -67,5 +67,5 @@ ln -s /opt/kits kits
 
 
 
-# Ref Links: 
+#### Ref Links: 
 - [Apache and PHP configuration for RHEL](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/using-the-php-scripting-language_configuring-basic-system-settings)
