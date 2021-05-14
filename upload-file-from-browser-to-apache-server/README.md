@@ -1,7 +1,6 @@
 ## Pre-requisites:
-1. Linux instance with Apache intalled
-2. PHP installed
-3. Root use for Linux
+1. Linux instance
+2. Browser
 
 ## Step 1: Install apache and php on RHEL server
 
