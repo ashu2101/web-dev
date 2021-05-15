@@ -84,11 +84,14 @@ ln -s
 
 ## Additional Configurations:
 If you wan to upload larger files on to server, you need to do below configuration changes in ```/etc/httpd/conf.d/php.conf```. This file is created automatically when you install php-fpm binaries.
-```conf
+```sh
 #Additional configurations for uploadin large files
-php_value max_execution_time 3600   # Max time for transaciton before it terminsates
-php_value upload_max_filesize 500M  # Max file size of file that can be uploaded
-php_value post_max_size 500M        # Max file size the upload can handleMax size
+# Max time for transaciton before it terminsates
+php_value max_execution_time 3600 
+# Max file size of file that can be uploaded
+php_value upload_max_filesize 500M  
+# Max file size the upload can handleMax size
+php_value post_max_size 500M        
 php_value memory_limit -1           
 php_value max_input_time -1
 LimitRequestBody 0
