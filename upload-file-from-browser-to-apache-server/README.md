@@ -74,13 +74,7 @@ chmod +x upload.php
 #Paste the upload.php file content from repo to above file in server
 ```
 
-## Step 6: Make simlinks in you desired folders pointing to /tmp/extensions and /tmp/scripts as needed.
-```sh
-cd /opt/polarion/polarion/extensions/
-ln -s 
-```
-
-## Step 7: Access your uploader site ```http://<hostname>/upload.php```
+## Step 6: Access your uploader site ```http://<hostname>/upload.php```
 
 
 
