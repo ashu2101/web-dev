@@ -93,6 +93,22 @@ php_value max_input_time -1
 LimitRequestBody 0
 ```
 
+### Add security to your page:
+Add belowo configurations to ```php.conf``` file locate in ```/etc/httpd/conf.d``` 
+We need to create a /opt/passwd file to store use and password credentials. Use htpasswd command to create new password.
+```sh
+<Location /upload.php>
+
+# No anonymous access, always require authenticated users
+Require valid-user
+
+# How to authenticate a user.
+AuthType Basic
+AuthName "File Uploader"
+AuthUserFile "/opt/passwd"
+</Location>
+```
+
 
 #### Note:
 1- Not able to upload file to server: Check the apache logs in /var/log/html/error_log for error messages. You need to changes folder permissions to accomplish this. Preffered is to use /tmp dir as storage location.
