@@ -69,6 +69,8 @@ ln -s /tmp/scripts new_scripts
 ```sh
 cd /var/www/html
 touch upload.php
+chown apache:apache upload.php
+chmod +x upload.php
 #Paste the upload.php file content from repo to above file in server
 ```
 
