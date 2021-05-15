@@ -78,6 +78,17 @@ ln -s
 
 ## Step 7: Access the http://hostname/upload.php
 
+## Additional Configurations:
+If you wan to upload larger files on to server, you need to do below configuration changes in ```/etc/httpd/conf.d/php.conf```. This file is created automatically when you install php-fpm binaries.
+```conf
+#Additional configurations for uploadin large files
+php_value max_execution_time 3600   # Max time for transaciton before it terminsates
+php_value upload_max_filesize 500M  # Max file size of file that can be uploaded
+php_value post_max_size 500M        # Max file size the upload can handleMax size
+php_value memory_limit -1           
+php_value max_input_time -1
+LimitRequestBody 0
+```
 
 #### Note:
 1- Not able to upload file to server: Check the apache logs in /var/log/html/error_log for error messages. You need to changes folder permissions to accomplish this. Preffered is to use /tmp dir as storage location.
@@ -97,3 +108,4 @@ ln -s /opt/kits kits
 
 #### Ref Links: 
 - [Apache and PHP configuration for RHEL](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_basic_system_settings/using-the-php-scripting-language_configuring-basic-system-settings)
+- [Configurations to upload large files](https://www.bluelinemedia.co.uk/blog/entry/web-design/blog/upload-large-files)
