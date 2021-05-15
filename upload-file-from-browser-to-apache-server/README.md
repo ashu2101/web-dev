@@ -49,7 +49,9 @@ http://<hostname>/temp.php
 ```sh
 vim /usr/lib/systemd/system/httpd.service
 ```
-Set ```PrivateTmp=true```` to ```PrivateTmp=false```` 
+
+Set ```PrivateTmp=true ``` to ```PrivateTmp=false ``` 
+
 ```sh
 systemctl restart httpd
 ```
@@ -76,7 +78,9 @@ cd /opt/polarion/polarion/extensions/
 ln -s 
 ```
 
-## Step 7: Access the http://hostname/upload.php
+## Step 7: Access your uploader site ```http://<hostname>/upload.php```
+
+
 
 ## Additional Configurations:
 If you wan to upload larger files on to server, you need to do below configuration changes in ```/etc/httpd/conf.d/php.conf```. This file is created automatically when you install php-fpm binaries.
@@ -89,6 +93,7 @@ php_value memory_limit -1
 php_value max_input_time -1
 LimitRequestBody 0
 ```
+
 
 #### Note:
 1- Not able to upload file to server: Check the apache logs in /var/log/html/error_log for error messages. You need to changes folder permissions to accomplish this. Preffered is to use /tmp dir as storage location.
