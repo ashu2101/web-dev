@@ -62,7 +62,7 @@ systemctl restart httpd
 cd /opt/polarion/polarion/extensions
 ln -s /tmp/extensions new_extensions
 cd /opt/polarion/scripts
-ln -s /tmp/scripts/ new_scripts
+ln -s /tmp/scripts new_scripts
 ```
 
 ## Step 5: Create a upload.php file and copy the php code present in repo.
