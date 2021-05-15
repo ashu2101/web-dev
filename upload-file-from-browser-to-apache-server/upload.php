@@ -13,7 +13,7 @@
 
             <div class="position-absolute top-0 start-50 translate-middle-x">
                 <div class="d-flex p-3 bd-highlight">
-                <div class="container-fluid p-5 " style="border-style: solid">
+                <div class="container-fluid p-5 text-warning bg-dark" style="border-style: solid">
                     <h3>Upload Extensions and Scripts</h3>
                     <br>
             <hr>
