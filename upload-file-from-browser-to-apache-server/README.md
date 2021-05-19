@@ -1,5 +1,5 @@
 ## Key Notes before implemention:
-1. Below configurations are tried and tested on Linux instance and Windows instance. Command on Windows may differ than belwo.
+1. Below configurations are tried and tested on Linux instance and Windows instance. Command on Windows may differ than below.
 2. All uploaded files are stored in ```/tmp``` folder as this folder has all allow read-write-execute access for all users and groups. For windows you can configure any location you wish to by changing below code.
 ```php
  $dir_location = '/tmp/'.$_POST['location'].'/';
