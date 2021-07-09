@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .center{
+        margin:10px; 
+        text-align: center;
+        padding:10px;
+        border: 5px solid salmon;
+    }
+    </style>
+</head>
+<body>
+    
+    <div class="center">
+        <span><input style="height:20px;" type="text" name="searchBox" value="" placeholder="Search country details here"></span>
+        <span><button type="submit" onclick="abc()">Click Here</button></span>
+    </div>
+
+    <script>
+        var abc = ()=>{
+            console.log("Hello Ashu")
+
+            if (document.getElementById("woow")){
+                document.getElementById("woow").innerHTML = "";
+            }
+
+            //Keyword to serch in the API
+            var toSearch = document.getElementsByName("searchBox")[0].value;
+            var data = fetch(`https://restcountries.eu/rest/v2/name/${toSearch}`);
+
+        data
+        .then(function (res) {
+            // console.log(res.json());
+            return res.json();
+        })
+        .then(function (resdata) {
+
+            var dataTable = document.createElement("table");
+            dataTable.id = "woow"
+            dataTable.border = "1";
+            var row = document.createElement("tr");
+            
+            // console.log(dataTable, row,rowData);
+            Object.keys(resdata[0]).forEach(element => {
+                var rowData = document.createElement("th");
+                 rowData.innerHTML = element
+                 row.appendChild(rowData);
+            });
+            dataTable.appendChild(row);
+
+            resdata.forEach(element=>{
+                var row = document.createElement("tr");
+                var tempVariable ;
+                Object.keys(resdata[0]).forEach(ele => {
+                    // console.log(element[ele], ele);
+                    var rowData = document.createElement("td");
+                    rowData.innerHTML = element[ele];
+                    
+
+                    if (ele === "flag"){
+                        // console.log(element[ele]); 
+                        rowData.innerHTML = "";
+                        var image = document.createElement("img");
+                        image.style = "width:50px";
+                        image.src = element[ele];
+                        rowData.appendChild(image);
+                    }
+                    row.appendChild(rowData);
+                });
+                dataTable.appendChild(row);
+            });
+            
+            document.body.appendChild(dataTable);
+            console.log(dataTable);
+
+        })
+        .catch(function (err) {
+            console.log(err);
+        })
+        };
+    </script>
+
+</body>
+</html>
